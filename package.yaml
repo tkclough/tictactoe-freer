@@ -53,7 +53,6 @@ dependencies:
   - text
   - vty
   - array
-  - scotty
   - transformers
   - aeson
   - unordered-containers
@@ -61,19 +60,27 @@ dependencies:
   - syb
   - template-haskell
   - parsec
+  - servant-server
+  - warp
+  - wai
 
 library:
-  source-dirs: src
+  source-dirs: lib
   exposed-modules:
     - Tictactoe.Types
     - Tictactoe.Players
 
 executables:
   tictactoe:
-    source-dirs:      src
+    source-dirs:      
+    - src
+    - lib
     main:             Main.hs
-    ghc-options:
-      - -O2
+  tictactoe-electron:
+    source-dirs:      
+    - app
+    - lib
+    main:             Main.hs
 
 tests:
   unit:

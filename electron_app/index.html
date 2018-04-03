@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Tic-tac-toe</title>
+        <style>
+            td {
+                border: 1px solid black;
+                width: 50px;
+                height: 50px;
+
+                font: 14pt Helvetica;
+                justify-content: center;
+            }
+            td:hover {
+                background-color: grey;
+            }
+        </style>
+    </head>
+    <form>
+        <p>Please select your mark:</p>
+        <div>
+            <input type="radio" id="X"
+             name="mark" value="X" checked>
+            <label for="X">X</label>
+
+            <input type="radio" id="O"
+             name="mark" value="O">
+             <label for="O">O</label>
+        </div>
+    </form>
+    <body>
+        <table id="board">
+            <tr>
+                <td id="0"></td>
+                <td id="1"></td>
+                <td id="2"></td>
+            </tr>
+            <tr>
+                <td id="3"></td>
+                <td id="4"></td>
+                <td id="5"></td>
+            </tr>
+            <tr>
+                <td id="6"></td>
+                <td id="7"></td>
+                <td id="8"></td>
+            </tr>
+        </table>
+    </body>
+
+    <script>
+        window.nodeRequire = require;
+        delete window.require;
+        delete window.exports;
+        delete window.module;
+
+        window.$ = window.jQuery = nodeRequire('./resources/jquery-2.2.3.min.js')
+
+        nodeRequire('./renderer.js')
+    </script>
+</html>

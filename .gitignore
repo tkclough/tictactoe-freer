@@ -1,0 +1,9 @@
+.stack-work/**
+electron_app/node_modules/
+electron_app/resources/
+electron_app/package-lock.json
+.package.yaml.swp
+client_session_key.aes
+package.yaml.save
+*.tix
+*.cabal
