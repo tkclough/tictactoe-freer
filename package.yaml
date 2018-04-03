@@ -1,0 +1,92 @@
+name:                tictactoe-freer
+version:             0.1.0.0
+#synopsis:
+#description:
+homepage:            https://github.com/githubuser/tictactoe#readme
+license:             BSD3
+author:              Tim Clough
+maintainer:          tmclough98@example.com
+copyright:           2018 Tim Clough
+category:            Web
+extra-source-files:
+- README.md
+
+default-extensions:
+  - BangPatterns
+  - ConstraintKinds
+  - DataKinds
+  - DefaultSignatures
+  - DeriveFoldable
+  - DeriveFunctor
+  - DeriveGeneric
+  - DeriveLift
+  - DeriveTraversable
+  - EmptyCase
+  - ExistentialQuantification
+  - FlexibleContexts
+  - FlexibleInstances
+  - FunctionalDependencies
+  - GADTs
+  - GeneralizedNewtypeDeriving
+  - InstanceSigs
+  - KindSignatures
+  - LambdaCase
+  - MultiParamTypeClasses
+  - MultiWayIf
+  - NamedFieldPuns
+  - OverloadedStrings
+  - PatternSynonyms
+  - RankNTypes
+  - ScopedTypeVariables
+  - StandaloneDeriving
+  - TupleSections
+  - TypeFamilies
+  - TypeFamilyDependencies
+  - TypeOperators
+
+dependencies:
+  - base >= 4.7 && < 5
+  - brick
+  - freer-simple
+  - mtl
+  - vector
+  - text
+  - vty
+  - array
+  - scotty
+  - transformers
+  - aeson
+  - unordered-containers
+  - containers
+  - syb
+  - template-haskell
+  - parsec
+
+library:
+  source-dirs: src
+  exposed-modules:
+    - Tictactoe.Types
+    - Tictactoe.Players
+
+executables:
+  tictactoe:
+    source-dirs:      src
+    main:             Main.hs
+    ghc-options:
+      - -O2
+
+tests:
+  unit:
+    source-dirs: tests
+    main: Tests.hs
+    dependencies:
+    - QuickCheck
+    - tictactoe
+    - tasty
+    - tasty-hunit
+    - tasty-quickcheck
+    - tasty-smallcheck
+    - template-haskell
+    - file-embed
+    - lens
+

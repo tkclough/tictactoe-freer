@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <style>
+      td {
+        border: 1px solid black;
+        height: 50px;
+        width: 50px;
+        text-align: center;
+        font: 300% arial, sans-serif;
+      }
+
+      td:hover {
+          background-color: gray;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <script>
+      $(document).ready(function() {
+        $('#ttt td').click(function(event) {
+          jQuery.post('/',
+                   event.target.id,
+                  function(success) {
+                    if (success === "true") {
+                      event.target.innerHTML = 'X'
+                    }
+                  });
+        })
+      })
+
+    </script>
+    <table id="ttt">
+      <tr>
+        <td id="0"></td>
+        <td id="1"></td>
+        <td id="2"></td>
+      </tr>
+      <tr>
+        <td id="3"></td>
+        <td id="4"></td>
+        <td id="5"></td>
+      </tr>
+      <tr>
+        <td id="6"></td>
+        <td id="7"></td>
+        <td id="8"></td>
+      </tr>
+  </body>
+</html>
